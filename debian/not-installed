@@ -1,0 +1,3 @@
+# dh_installman installs these
+./usr/share/man/man1/plasmaengineexplorer.1
+./usr/share/man/man1/plasmoidviewer.1

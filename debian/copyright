@@ -1,0 +1,181 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: plasmate
+Source: http://download.kde.org/unstable/plasmate/
+
+Files: *
+Copyright:	2006-2009 Aaron Seigo <aseigo@kde.org>
+		2009 Riccardo Iaconelli <riccardo@kde.org>
+		2007 by Pino Toscano <pino@kde.org>
+		2012 Giorgos Tsiapaliwkas <terietor@gmail.com>
+		2009-2011 Martin Gräßlin <mgraesslin@kde.org>
+		2012 Antonis Tsiapaliokas <kok3rs@gmail.com>
+		2010 Lim Yuen Hoe <yuenhoe@hotmail.com>
+		2010 Diego '[Po]lentino' Casella <polentino911@gmail.com>
+		2009-2012 Plasma Development Team
+		2009 Dmitry Suzdalev <dimsuz@gmail.com>
+License: GPL-2+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2"
+ 
+Files: 	./plasmate/konsole/konsolepreviewer.h
+	./plasmate/previewer/plasmoid/previewcontainment.cpp
+	./plasmate/previewer/plasmoid/plasmoidview.h
+	./plasmate/previewer/plasmoid/previewcontainment.h
+	./plasmate/previewer/plasmoid/plasmoidview.cpp
+	./plasmate/previewer/plasmoid/plasmoidpreviewer.h
+	./plasmate/projectmanager/projectmanager.cpp
+	./plasmate/projectmanager/projectmanager.h
+	./plasmate/templates/mainPlasmoid.py
+	./plasmate/templates/mainRunner.py
+	./plasmate/templates/mainDataEngine.py
+Copyright:	2012 Giorgos Tsiapaliwkas <terietor@gmail.com>
+		2009 Artur Duque de Souza <morpheuz@gmail.com>
+		2007 Frerich Raabe <raabe@kde.org>
+		2008 Aleix Pol <aleixpol@gmail.com>
+		2007 Aaron Seigo <aseigo@kde.org>
+		2010 Lim Yuen Hoe <yuenhoe@hotmail.com>
+Copyright: LGPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU Library General Public License as
+ published by the Free Software Foundation; either version 2, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details
+ .
+ You should have received a copy of the GNU Library General Public
+ License along with this program; if not, write to the
+ Free Software Foundation, Inc.,
+ 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ .
+ On Debian systems, the complete text of the GNU Library General
+ Public License version 2 can be found in "/usr/share/common-licenses/LGPL-2".
+ 
+Files: plasmate/modeltest/*
+Copyright: 2009 Stephen Kelly <steveire@gmail.com>
+           2011 Nokia Corporation and/or its subsidiary(-ies) <qt-info@nokia.com>
+License: LGPL-2.1
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA    02110-1301  USA
+ .
+ On Debian systems, the complete text of the GNU Lesser General
+ Public License Version 2 can be found in "/usr/share/common-licenses/ 
+ LGPL-2.1"
+
+Files: ./plasmoidviewer/*
+       ./plasmate/previewer/plasmoid/test/*
+Copyright: 2007 Frerich Raabe <raabe@kde.org>
+           2007-2008 Aaron Seigo <aseigo@kde.org>           
+License: BSD
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions    
+ are met: 
+ .
+ 1. Redistributions of source code must retain the above copyright    
+ notice, this
+ list of conditions and the following disclaimer. 
+ 2. Redistributions in binary form must reproduce the above copyright  
+ notice,
+ this list of conditions and the following disclaimer in the  
+ documentation
+ and/or other materials provided with the distribution. 
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+ "AS IS" AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+ IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE  
+ LIABLE FOR
+ ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+ CONSEQUENTIAL DAMAGES
+ (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR  
+ SERVICES;
+ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER  
+ CAUSED AND
+ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR 
+ TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+ OF THIS
+ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ .
+ The views and conclusions contained in the software and documentation 
+ are those
+ of the authors and should not be interpreted as representing official 
+ policies, 
+ either expressed or implied, of the FreeBSD Project.
+ .
+ On Debian systems, the complete text of the FreeBSD License can be  
+ found in "/usr/share/common-licenses/ 
+ BSD"
+
+Files: engineexplorer/ktreeviewsearchline.cpp
+       engineexplorer/ktreeviewsearchline.h
+Copyright: 2003 Scott Wheeler <wheeler@kde.org>
+           2005 Rafal Rzepecki <divide@users.sourceforge.net>
+           2006 Hamish Rodda <rodda@kde.org>
+           2007 Pino Toscano <pino@kde.org>
+License: LGPL-2
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Library General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Library General Public License for more details.
+ .
+ You should have received a copy of the GNU Library General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  - 0    
+ 2110-1301  USA
+ .
+ On Debian systems, the complete text of the GNU Library General
+ Public License Version 2 can be found in "/usr/share/common-licenses/ 
+ LGPL-2"
+
+Files: debian/*
+Copyright: 2013 Rohan Garg <rohangarg@kubuntu.org>
+License: GPL-2+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
