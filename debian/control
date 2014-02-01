@@ -5,7 +5,7 @@ Maintainer: David Suárez <david.sephirot@gmail.com>
 Build-Depends: debhelper (>= 9.0.0), cmake, pkg-kde-tools,
  kdelibs5-dev, kdepimlibs5-dev, libboost1.54-dev, libgpgme11-dev,
  libattica-dev, libqtwebkit-dev
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 Homepage: http://projects.kde.org/plasmate
 Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-packagers/kubuntu-packaging/plasmate
 Vcs-Bzr: https://code.launchpad.net/~kubuntu-packagers/kubuntu-packaging/plasmate
