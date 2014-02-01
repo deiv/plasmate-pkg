@@ -3,7 +3,7 @@ Section: kde
 Priority: extra
 Maintainer: Kubuntu Developers <kubuntu-devel@lists.ubuntu.com>
 XSBC-Original-Maintainer: Rohan Garg <rohangarg@kubuntu.org>
-Build-Depends: debhelper (>= 8.0.0), cmake, pkg-kde-tools,
+Build-Depends: debhelper (>= 9.0.0), cmake, pkg-kde-tools,
  kdelibs5-dev, kdepimlibs5-dev, libboost1.54-dev, libgpgme11-dev,
  libattica-dev, libqtwebkit-dev
 Standards-Version: 3.9.4
