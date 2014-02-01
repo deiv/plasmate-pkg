@@ -1,8 +1,7 @@
 Source: plasmate
 Section: kde
 Priority: extra
-Maintainer: Kubuntu Developers <kubuntu-devel@lists.ubuntu.com>
-XSBC-Original-Maintainer: Rohan Garg <rohangarg@kubuntu.org>
+Maintainer: David Suárez <david.sephirot@gmail.com>
 Build-Depends: debhelper (>= 9.0.0), cmake, pkg-kde-tools,
  kdelibs5-dev, kdepimlibs5-dev, libboost1.54-dev, libgpgme11-dev,
  libattica-dev, libqtwebkit-dev
