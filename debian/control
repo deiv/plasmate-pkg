@@ -13,5 +13,9 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Suggests: git
 Description: IDE tailored for development of Plasma components
- A small IDE tailored for development of Plasma components,
- such as Widgets, Runners, Dataengines.
+ A complete solution for developing Plasma components, such as
+ “widgets”, themes, dataengines, ions and krunners.
+ .
+ It is not a general purpose IDE but rather a tool specifically
+ tailored to creating Plasma Workspace add-ons using
+ non-compiled languages such as QML and Javascript.
