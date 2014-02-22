@@ -10,17 +10,8 @@ Homepage: http://projects.kde.org/plasmate
 
 Package: plasmate
 Architecture: any
-Depends: plasmate-data, ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Suggests: git
 Description: IDE tailored for development of Plasma components
  A small IDE tailored for development of Plasma components,
  such as Widgets, Runners, Dataengines.
-
-Package: plasmate-data
-Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: IDE tailored for development of Plasma components
- A small IDE tailored for development of Plasma components,
- such as Widgets, Runners, Dataengines.
- .
- Architecture independent files for plasmate
