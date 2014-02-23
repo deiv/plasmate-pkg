@@ -2,9 +2,15 @@ Source: plasmate
 Section: kde
 Priority: extra
 Maintainer: David Suárez <david.sephirot@gmail.com>
-Build-Depends: debhelper (>= 9.0.0), cmake, pkg-kde-tools,
- kdelibs5-dev, kdepimlibs5-dev, libboost1.54-dev, libgpgme11-dev,
- libattica-dev, libqtwebkit-dev
+Build-Depends: cmake,
+               debhelper (>= 9.0.0),
+               kdelibs5-dev,
+               kdepimlibs5-dev,
+               libattica-dev,
+               libboost1.54-dev,
+               libgpgme11-dev,
+               libqtwebkit-dev,
+               pkg-kde-tools
 Standards-Version: 3.9.5
 Homepage: http://projects.kde.org/plasmate
 Vcs-Git: git://github.com/deiv/plasmate-pkg.git
@@ -12,7 +18,7 @@ Vcs-Browser: https://github.com/deiv/plasmate-pkg
 
 Package: plasmate
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Suggests: git
 Description: IDE tailored for development of Plasma components
  A complete solution for developing Plasma components, such as
