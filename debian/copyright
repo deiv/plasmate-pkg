@@ -97,9 +97,6 @@ License: BSD
  of the authors and should not be interpreted as representing official
  policies,
  either expressed or implied, of the FreeBSD Project.
- .
- On Debian systems, the complete text of the FreeBSD License can be
- found in "/usr/share/common-licenses/BSD"
 
 Files: engineexplorer/ktreeviewsearchline.cpp
        engineexplorer/ktreeviewsearchline.h
