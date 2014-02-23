@@ -23,7 +23,7 @@ Depends: ${misc:Depends}, ${shlibs:Depends}
 Suggests: git
 Description: IDE tailored for development of Plasma components
  A complete solution for developing Plasma components, such as
- “widgets”, themes, dataengines, ions and krunners.
+ "widgets", themes, dataengines, ions and krunners.
  .
  It is not a general purpose IDE but rather a tool specifically
  tailored to creating Plasma Workspace add-ons using
