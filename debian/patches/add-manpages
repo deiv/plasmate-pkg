@@ -1,0 +1,252 @@
+Description: Add missing manpages
+ Added manpages:
+   - plasmate
+   - remote-widgets-browser
+   - wallpaperviewer
+
+Author: David Suárez <david.sephirot@gmail.com>
+Last-Update: <2014-02-23>
+
+--- plasmate-1.0.orig/plasmate/CMakeLists.txt
++++ plasmate-1.0/plasmate/CMakeLists.txt
+@@ -182,4 +182,6 @@ target_link_libraries(plasmakconfigxtedi
+ 
+ install(TARGETS plasmakconfigxteditor ${INSTALL_TARGETS_DEFAULT_ARGS})
+ 
++kde4_create_manpage(man-plasmate.1.docbook 1 INSTALL_DESTINATION ${MAN_INSTALL_DIR})
++
+ macro_display_feature_log()
+--- /dev/null
++++ plasmate-1.0/plasmate/man-plasmate.1.docbook
+@@ -0,0 +1,58 @@
++<?xml version="1.0" ?>
++<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
++<!ENTITY % English "INCLUDE">
++]>
++
++<refentry lang="&language;">
++<refentryinfo>
++<title>KDE User's Manual</title>
++<date>2014-02-23</date>
++<productname>K Desktop Environment</productname>
++</refentryinfo>
++
++<refmeta>
++<refentrytitle><command>plasmate</command></refentrytitle>
++<manvolnum>1</manvolnum>
++</refmeta>
++
++<refnamediv>
++<refname><command>plasmate</command></refname>
++<refpurpose>IDE tailored for development of Plasma components</refpurpose>
++</refnamediv>
++
++<refsynopsisdiv>
++<cmdsynopsis>
++<command>plasmate</command>
++<arg choice="opt">KDE Generic Options</arg>
++<arg choice="opt">Qt Generic Options</arg>
++</cmdsynopsis>
++</refsynopsisdiv>
++
++<refsect1>
++<title>Description</title>
++<para><command>plasmate</command> is a complete solution for developing Plasma components, such as
++ “widgets”, themes, dataengines, ions and krunners.</para>
++
++<para>It is not a general purpose IDE but rather a tool specifically
++ tailored to creating Plasma Workspace add-ons using
++ non-compiled languages such as QML and Javascript.</para>
++</refsect1>
++
++<refsect1>
++<title>See Also</title>
++
++<para>More detailed user documentation is available from <ulink
++url="help:/plasma-desktop">help:/plasma-desktop</ulink>
++(either enter this <acronym>URL</acronym> into &konqueror;, or run
++<userinput><command>khelpcenter</command>
++<parameter>help:/plasma-desktop</parameter></userinput>).</para>
++
++</refsect1>
++
++<refsect1>
++<title>Authors</title>
++<para><command>plasmate</command> was written by
++<personname><firstname>Aaron</firstname><surname>Seigo</surname></personname> <email>aseigo@kde.org</email>.</para>
++</refsect1>
++
++</refentry>
+--- plasmate-1.0.orig/remote-widgets-browser/CMakeLists.txt
++++ plasmate-1.0/remote-widgets-browser/CMakeLists.txt
+@@ -10,3 +10,4 @@ target_link_libraries(plasma-remote-widg
+ 
+ install(TARGETS plasma-remote-widgets-browser ${INSTALL_TARGETS_DEFAULT_ARGS})
+ 
++kde4_create_manpage(man-plasma-remote-widgets-browser.1.docbook 1 INSTALL_DESTINATION ${MAN_INSTALL_DIR})
+--- /dev/null
++++ plasmate-1.0/remote-widgets-browser/man-plasma-remote-widgets-browser.1.docbook
+@@ -0,0 +1,54 @@
++<?xml version="1.0" ?>
++<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
++<!ENTITY % English "INCLUDE">
++]>
++
++<refentry lang="&language;">
++<refentryinfo>
++<title>KDE User's Manual</title>
++<date>2014-02-23</date>
++<productname>K Desktop Environment</productname>
++</refentryinfo>
++
++<refmeta>
++<refentrytitle><command>plasma-remote-widgets-browser</command></refentrytitle>
++<manvolnum>1</manvolnum>
++</refmeta>
++
++<refnamediv>
++<refname><command>plasma-remote-widgets-browser</command></refname>
++<refpurpose>Explore the Plasma Widgets shared on the network</refpurpose>
++</refnamediv>
++
++<refsynopsisdiv>
++<cmdsynopsis>
++<command>plasma-remote-widgets-browser</command>
++<arg choice="opt">KDE Generic Options</arg>
++<arg choice="opt">Qt Generic Options</arg>
++</cmdsynopsis>
++</refsynopsisdiv>
++
++<refsect1>
++<title>Description</title>
++<para><command>plasma-remote-widgets-browser</command> allows one to explore the Plasma Widgets shared on the network
++  by others KDE desktops.</para>
++</refsect1>
++
++<refsect1>
++<title>See Also</title>
++
++<para>More detailed user documentation is available from <ulink
++url="help:/plasma-desktop">help:/plasma-desktop</ulink>
++(either enter this <acronym>URL</acronym> into &konqueror;, or run
++<userinput><command>khelpcenter</command>
++<parameter>help:/plasma-desktop</parameter></userinput>).</para>
++
++</refsect1>
++
++<refsect1>
++<title>Authors</title>
++<para><command>plasma-remote-widgets-browser</command> was written by
++<personname><firstname>Kevin</firstname><surname>Ottens</surname></personname> <email>ervin@kde.org</email>.</para>
++</refsect1>
++
++</refentry>
+--- plasmate-1.0.orig/wallpaperviewer/CMakeLists.txt
++++ plasmate-1.0/wallpaperviewer/CMakeLists.txt
+@@ -9,3 +9,4 @@ target_link_libraries(plasmawallpapervie
+ 
+ install(TARGETS plasmawallpaperviewer ${INSTALL_TARGETS_DEFAULT_ARGS})
+ 
++kde4_create_manpage(man-plasmawallpaperviewer.1.docbook 1 INSTALL_DESTINATION ${MAN_INSTALL_DIR})
+--- /dev/null
++++ plasmate-1.0/wallpaperviewer/man-plasmawallpaperviewer.1.docbook
+@@ -0,0 +1,99 @@
++<?xml version="1.0" ?>
++<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
++<!ENTITY % English "INCLUDE">
++]>
++
++<refentry lang="&language;">
++<refentryinfo>
++<title>KDE User's Manual</title>
++<date>2010-10-06</date>
++<productname>K Desktop Environment</productname>
++</refentryinfo>
++
++<refmeta>
++<refentrytitle><command>plasmawallpaperviewer</command></refentrytitle>
++<manvolnum>1</manvolnum>
++</refmeta>
++
++<refnamediv>
++<refname><command>plasmawallpaperviewer</command></refname>
++<refpurpose>PViewer for Plasma wallpapers</refpurpose>
++</refnamediv>
++
++<refsynopsisdiv>
++<cmdsynopsis>
++<command>plasmawallpaperviewer</command>
++
++<group choice="opt"><option>--height</option> <replaceable> pixels</replaceable></group>
++<group choice="opt"><option>--width</option> <replaceable> pixels</replaceable></group>
++<group choice="opt"><option>--wallpaper</option> <replaceable> plugin name</replaceable></group>
++<group choice="opt"><option>--mode</option> <replaceable> mode name</replaceable></group>
++<group choice="opt"><option>--list</option></group>
++<group choice="opt"><option>--configure</option></group>
++
++</cmdsynopsis>
++<cmdsynopsis>
++<command>plasmawallpaperviewer</command>
++<arg choice="opt">KDE Generic Options</arg>
++<arg choice="opt">Qt Generic Options</arg>
++</cmdsynopsis>
++</refsynopsisdiv>
++
++<refsect1>
++<title>Description</title>
++<para><command>plasmawallpaperviewer</command> is a graphical tool allowing developers to
++test Plasma wallpapers.</para>
++</refsect1>
++
++<refsect1>
++<title>Options</title>
++
++<variablelist>
++
++<varlistentry>
++<term><option>--height<replaceable>pixels</replaceable></option></term>
++<listitem><para>Sets the height of the window, in pixels.</para></listitem>
++</varlistentry>
++<varlistentry>
++<term><option>--width <replaceable>pixels</replaceable></option></term>
++<listitem><para>Sets the width of the window, in pixels.</para></listitem>
++</varlistentry>
++<varlistentry>
++<term><option>--wallpaper<replaceable>plugin name</replaceable></option></term>
++<listitem><para>The wallpaper plugin to use [image].</para></listitem>
++</varlistentry>
++<varlistentry>
++<term><option>--mode <replaceable>mode name</replaceable></option></term>
++<listitem><para>The mode to put the wallpaper in [SingleImage].</para></listitem>
++</varlistentry>
++<varlistentry>
++<term><option>--list </option></term>
++<listitem><para>List all the known wallpapers and their modes.</para></listitem>
++</varlistentry>
++<varlistentry>
++<term><option>--configure </option></term>
++<listitem><para>Open configuration dialog additionally to show the wallpaper plugin.</para></listitem>
++</varlistentry>
++
++</variablelist>
++
++</refsect1>
++
++<refsect1>
++<title>See Also</title>
++
++<para>More detailed user documentation is available from <ulink
++url="help:/plasma-desktop">help:/plasma-desktop</ulink>
++(either enter this <acronym>URL</acronym> into &konqueror;, or run
++<userinput><command>khelpcenter</command>
++<parameter>help:/plasma-desktop</parameter></userinput>).</para>
++
++</refsect1>
++
++<refsect1>
++<title>Authors</title>
++<para><command>plasmawallpaperviewer</command> was written by
++<personname><firstname>Aaron</firstname><surname>Seigo</surname></personname> <email>aseigo@kde.org</email>.</para>
++</refsect1>
++
++</refentry>
