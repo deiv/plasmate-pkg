@@ -1,5 +1,3 @@
 plasmate: binary-without-manpage usr/bin/kwin-windowswitcherpreviewer
 plasmate: binary-without-manpage usr/bin/plasmakconfigxteditor
 plasmate: binary-without-manpage usr/bin/plasmaremoteinstaller
-
-plasmate: desktop-entry-lacks-keywords-entry usr/share/applications/kde4/plasmate.desktop

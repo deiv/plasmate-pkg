@@ -1,0 +1,12 @@
+Description: Add the keywords entry to the plasmate desktop file
+
+Author: David Suárez <david.sephirot@gmail.com>
+Last-Update: <2014-02-23>
+
+--- plasmate-1.0.orig/plasmate/plasmate.desktop
++++ plasmate-1.0/plasmate/plasmate.desktop
+@@ -51,3 +51,4 @@ Icon=plasmagik
+ Type=Application
+ InitialPreference=7
+ Categories=Qt;KDE;Development;IDE;
++Keywords=Qt;KDE;Development;IDE;dataengine;krunner;QML
