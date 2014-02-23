@@ -10,7 +10,8 @@ Build-Depends: cmake,
                libboost1.54-dev,
                libgpgme11-dev,
                libqtwebkit-dev,
-               pkg-kde-tools
+               pkg-kde-tools,
+               libsoprano-dev
 Standards-Version: 3.9.5
 Homepage: http://projects.kde.org/plasmate
 Vcs-Git: git://github.com/deiv/plasmate-pkg.git
