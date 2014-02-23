@@ -7,6 +7,8 @@ Build-Depends: debhelper (>= 9.0.0), cmake, pkg-kde-tools,
  libattica-dev, libqtwebkit-dev
 Standards-Version: 3.9.5
 Homepage: http://projects.kde.org/plasmate
+Vcs-Git: git://github.com/deiv/plasmate-pkg.git
+Vcs-Browser: https://github.com/deiv/plasmate-pkg
 
 Package: plasmate
 Architecture: any
