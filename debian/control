@@ -14,8 +14,8 @@ Build-Depends: cmake,
                libsoprano-dev
 Standards-Version: 3.9.5
 Homepage: http://projects.kde.org/plasmate
-Vcs-Git: git://github.com/deiv/plasmate-pkg.git
-Vcs-Browser: https://github.com/deiv/plasmate-pkg
+Vcs-Git: git://anonscm.debian.org/pkg-kde/kde-extras/plasmate.git
+Vcs-Browser: http://http://anonscm.debian.org/gitweb/?p=pkg-kde/kde-extras/plasmate.git;a=summary
 
 Package: plasmate
 Architecture: any
