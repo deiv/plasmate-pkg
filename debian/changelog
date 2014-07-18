@@ -1,4 +1,4 @@
-plasmate (1.0-1) unstable; urgency=low
+plasmate (1.0+git3ba9f1cc-1) unstable; urgency=high
 
   * Initial release (Closes: #734369)
 
