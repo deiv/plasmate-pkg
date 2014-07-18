@@ -26,7 +26,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QTextStream>
 
 #include <KTextEdit>
-
 #include <KAction>
 #include <KActionCollection>
 #include <KConfig>
@@ -111,7 +110,6 @@ MainWindow::MainWindow(QWidget *parent)
         m_notesWidget(0),
         m_textEditor(0),
         m_kconfigXtEditor(0),
-        m_konsoleWidget(0),
         m_filelist(0),
         m_editPage(0),
         m_imageViewer(0),
@@ -134,6 +132,7 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(m_central);
     m_central->switchTo(m_startPage);
     setDockOptions(QMainWindow::AllowNestedDocks); // why not?
+
     if (autoSaveConfigGroup().entryMap().isEmpty()) {
         setWindowState(Qt::WindowMaximized);
     }
@@ -270,7 +269,17 @@ void MainWindow::toggleActions()
         //Until this issue is being fixed we are hiding the konsole previewer.
         actionCollection()->action("konsole")->setVisible(false);
         //we are hiding the konsole previewer UI.
-        m_konsoleWidget->setVisible(false);
+        if (m_konsoleWidget) {
+            m_konsoleWidget.data()->setVisible(false);
+        }
+    } else if (m_packageType == "KWin/Script") {
+        //On KWin Scripts we don't have a previewer.
+        //So we are hiding it from the toolbar.
+        actionCollection()->action("preview")->setVisible(false);
+        //We want only the KWin scripts to have the ability to
+        //show or hide the konsole previewer from the toolbar.
+        //The rest packages can do that inside from the previewer.
+        //The Konsole is visible by default
     }
 }
 
@@ -301,7 +310,7 @@ void MainWindow::closeProject()
     }
 
     if (m_konsoleWidget) {
-        m_konsoleWidget->hide();
+        m_konsoleWidget.data()->hide();
     }
 
     if (m_notesWidget) {
@@ -452,7 +461,9 @@ void MainWindow::saveEditorData()
 void MainWindow::saveAndRefresh()
 {
     //in every new save clear the konsole.
-    m_konsoleWidget->clearOutput();
+    if (m_konsoleWidget) {
+        m_konsoleWidget.data()->clearOutput();
+    }
 
     saveEditorData();
     if (m_previewerWidget) {
@@ -678,10 +689,10 @@ void MainWindow::toggleKonsolePreviewer()
         return;
     }
 
-    if(m_konsoleWidget->isVisible()) {
-        m_konsoleWidget->setVisible(false);
+    if (m_konsoleWidget.data()->isVisible()) {
+        m_konsoleWidget.data()->setVisible(false);
     } else {
-        m_konsoleWidget->setVisible(true);
+        m_konsoleWidget.data()->setVisible(true);
     }
 }
 
@@ -853,11 +864,8 @@ void MainWindow::loadProject(const QString &path)
         refreshNotes();
     }
 
-
     //initialize the konsole previewer
-    m_konsoleWidget = createKonsoleFor(previewerType);
-    //after the init, cleat the Output
-    m_konsoleWidget->clearOutput();
+    m_konsoleWidget.reset(createKonsoleFor(previewerType, packagePath));
 
     // initialize previewer
     delete m_previewerWidget;
@@ -869,11 +877,10 @@ void MainWindow::loadProject(const QString &path)
         m_previewerWidget->setVisible(showPreview);
         //now do the relative stuff for the konsole
         connect(m_previewerWidget, SIGNAL(showKonsole()), this, SLOT(toggleKonsolePreviewer()));
-        addDockWidget(Qt::BottomDockWidgetArea, m_konsoleWidget);
+        addDockWidget(Qt::BottomDockWidgetArea, m_konsoleWidget.data());
     }
 
     restoreState(state, STATE_VERSION);
-    toolBar()->show();
 
     // Now, setup some useful properties such as the project name in the title bar
     // and setting the current working directory.
@@ -921,7 +928,11 @@ void MainWindow::checkMetafile(const QString &path)
     KConfig preferencesPath(dir.path() +'/'+ PROJECTRC);
     KConfigGroup preferences(&preferencesPath, "ProjectDefaultPreferences");
     QString api;
-    const QString radioButtonChecked = preferences.readEntry("radioButtonChecked", "De");
+    const QString radioButtonChecked = preferences.readEntry("radioButtonChecked");
+    if (radioButtonChecked.isEmpty()) {
+        kDebug() << dir.filePath(PROJECTRC) + "isn't valid, metadata.desktop cannot be checked";
+        return;
+    }
     if (radioButtonChecked == "Js") {
         api.append("javascript");
     } else if (radioButtonChecked == "Py") {
@@ -1010,7 +1021,7 @@ Previewer* MainWindow::createPreviewerFor(const QString& projectType)
     return ret;
 }
 
-KonsolePreviewer* MainWindow::createKonsoleFor(const QString& projectType)
+KonsolePreviewer* MainWindow::createKonsoleFor(const QString& projectType, const QString &packagePath)
 {
     KonsolePreviewer *konsole = 0;
     if (projectType.contains("KWin/WindowSwitcher")) {
@@ -1019,11 +1030,17 @@ KonsolePreviewer* MainWindow::createKonsoleFor(const QString& projectType)
         konsole = new KonsolePreviewer(i18n("Previewer Output"));
     } else if (projectType == "Plasma/Runner") {
         konsole = new KonsolePreviewer(i18n("Previewer Output"));
+    } else if (projectType == "KWin/Script") {
+        //we need to specify the serviceType and path of our package
+        konsole = new KonsolePreviewer(i18nc("Window Title", "KWin Scripting Konsole"), this, projectType, packagePath);
     }
 
     if (konsole) {
         konsole->setParent(this);
         konsole->setObjectName("Previewer Output");
+
+        //after the init, cleat the Output
+        konsole->clearOutput();
     }
 
     return konsole;
